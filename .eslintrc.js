@@ -29,6 +29,15 @@ module.exports = {
       "switchCase": 0,
       "ignores": ['script']
     }],
+    'vue/html-self-closing': ["error", {
+      "html": {
+        "void": "never",
+        "normal": "never",
+        "component": "always"
+      },
+    }
+
+    ]
   },
   parserOptions: {
     parser: 'babel-eslint'

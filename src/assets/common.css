@@ -1,0 +1,58 @@
+#app, button, textarea, input {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.base-main-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.base-title {
+  text-align: center;
+}
+
+.base-input-wrap {
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.base-input-wrap:first-child {
+  margin-top: 0;
+}
+
+.base-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 15px;
+
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.base-input_radio {
+  position: absolute;
+  left: -9999999999999px;
+  visibility: hidden;
+}
+
+.base-input_radio:checked ~ .base-input_checked,
+.base-input_radio ~ .base-input_unchecked {
+  display: inline;
+}
+
+.base-input_radio ~ .base-input_checked,
+.base-input_radio:checked ~ .base-input_unchecked {
+  display: none;
+}

@@ -1,15 +1,15 @@
 export default {
   methods: {
-    InputEvents_inputEmit(value) {
+    inputEvents_inputEmit(value) {
       this.$emit('input', value);
     },
-    InputEvents_changeEmit(value) {
+    inputEvents_changeEmit(value) {
       this.$emit('change', value);
     },
-    InputEvents_focusEmit(value) {
+    inputEvents_focusEmit(value) {
       this.$emit('focus', value);
     },
-    InputEvents_blurEmit(value) {
+    inputEvents_blurEmit(value) {
       this.$emit('blur', value);
     }
   }

@@ -1,15 +1,21 @@
 <template>
-  <div :class="fieldData.classNameWrap">
-    <label :for="fieldData.id" :class="fieldData.classNameLabel">{{ fieldData.label }}</label>
+  <div class="base-input-wrap" :class="fieldData.classNameWrap">
+    <label :for="fieldData.id"
+           class="base-label"
+           :class="fieldData.classNameLabel"
+    >
+      {{ fieldData.label }}
+    </label>
+
     <input :id="fieldData.id"
            :ref="fieldData.ref"
            type="email"
            class="base-input"
            :placeholder="fieldData.placeholder"
-           :name="fieldData.name"
+           :name="fieldData.inputName"
            :class="fieldData.className"
            :value="value"
-           @input="InputEvents_inputEmit($event.target.value)"
+           @input="inputEvents_inputEmit($event.target.value)"
     >
   </div>
 </template>

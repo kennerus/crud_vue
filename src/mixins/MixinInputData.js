@@ -1,4 +1,4 @@
-import InputField from '../models/InputField';
+import InputField from '../models/FormField';
 
 export default {
   props: {

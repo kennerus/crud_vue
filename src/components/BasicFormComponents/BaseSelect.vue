@@ -1,8 +1,8 @@
 <template>
-  <div :class="fieldData.classNameWrap">
-    <label :for="fieldData.id" :class="fieldData.classNameLabel">{{ fieldData.label }}</label>
+  <div class="base-input-wrap" :class="fieldData.classNameWrap">
+    <label :for="fieldData.id" class="base-label" :class="fieldData.classNameLabel">{{ fieldData.label }}</label>
     <select :id="fieldData.id">
-      <option />
+      <option></option>
     </select>
   </div>
 </template>

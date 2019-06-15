@@ -12,7 +12,8 @@
              :placeholder="fieldData.placeholder"
              :name="fieldData.inputName"
              :class="fieldData.className"
-             :value="fieldData.value"
+             :ckecked="value"
+             :value="value"
              @change="emitData"
       >
 
@@ -27,7 +28,7 @@
   import MixinInputMethods from '../../mixins/MixinInputMethods';
 
   export default {
-    name: 'BaseCheckbox',
+    name: 'BaseCheckboxBoolean',
     mixins: [MixinInputData, MixinInputMethods],
     model: {
       prop: 'value',
@@ -35,25 +36,27 @@
     },
     props: {
       value: {
-        type:Array,
-        default: () => []
+        type: Boolean,
+        default: false
       },
+      trueValue: {
+        type: Boolean,
+        default: true
+      },
+      falseValue: {
+        type: Boolean,
+        default: false
+      }
     },
     methods: {
       emitData(event) {
         const isChecked = event.target.checked;
-        const newValue = this.value;
-
-        if (isChecked) {
-          newValue.push(this.fieldData.value);
-        } else {
-          newValue.splice(newValue.indexOf(this.fieldData.value), 1);
-        }
-
-        this.$emit('change', newValue);
+        this.$emit('change', isChecked ? this.trueValue : this.falseValue)
       }
     }
-  };
+  }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

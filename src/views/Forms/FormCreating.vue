@@ -14,11 +14,13 @@
   import BaseSelect from "../../components/BasicFormComponents/BaseSelect";
   import BaseRadioButton from "../../components/BasicFormComponents/BaseRadioButton";
   import BaseCheckbox from "../../components/BasicFormComponents/BaseCheckbox";
+  import BaseCheckboxBoolean from "../../components/BasicFormComponents/BaseCheckboxBoolean";
+  import {mapActions} from 'vuex';
 
   export default {
     name: 'FormCreating',
     // eslint-disable-next-line
-    components: {BaseForm, BaseTextarea, BaseInput, BaseInputEmail, BaseInputTel, BaseSelect, BaseRadioButton, BaseCheckbox, },
+    components: {BaseForm, BaseTextarea, BaseInput, BaseInputEmail, BaseInputTel, BaseSelect, BaseRadioButton, BaseCheckbox, BaseCheckboxBoolean, },
     data() {
       return {
         data: {},
@@ -43,15 +45,15 @@
             label: 'Радио кнопка 1',
             inputName: 'radio',
             fieldName: 'radio',
-            value: 'Инокентий',
+            radioValue: 'Инокентий',
             component: BaseRadioButton
           },
           radio2: {
-            id: 'checkbox',
+            id: 'radio2',
             label: 'Радио кнопка 2',
-            inputName: 'checkbox',
-            fieldName: 'checkbox',
-            value: 'Василий',
+            inputName: 'radio',
+            fieldName: 'radio',
+            radioValue: 'Василий',
             component: BaseRadioButton
           },
           checkbox1: {
@@ -59,7 +61,7 @@
             label: 'Чекбокс 1',
             inputName: 'checkbox',
             fieldName: 'checkbox',
-            value: 'Василий',
+            checkboxValue: 'Василий',
             component: BaseCheckbox
           },
           checkbox2: {
@@ -67,7 +69,7 @@
             label: 'Чекбокс 2',
             inputName: 'checkbox',
             fieldName: 'checkbox',
-            value: 'Инокентий',
+            checkboxValue: 'Инокентий',
             component: BaseCheckbox
           },
           checkbox3: {
@@ -75,8 +77,15 @@
             label: 'Чекбокс 3',
             inputName: 'checkbox',
             fieldName: 'checkbox',
-            value: 'Владимир',
+            checkboxValue: 'Владимир',
             component: BaseCheckbox
+          },
+          checkboxBoolean: {
+            id: 'checkboxBoolean',
+            label: 'Чекбокс булев',
+            inputName: 'checkboxBoolean',
+            fieldName: 'checkboxBoolean',
+            component: BaseCheckboxBoolean
           },
           tel: {
             id: 'tel',
@@ -97,6 +106,14 @@
         },
         pageTitle: 'Форма создания'
       }
+    },
+    created() {
+      this.GET_FORM_INPUTS_DATA();
+    },
+    methods: {
+      ...mapActions({
+        GET_FORM_INPUTS_DATA: 'GET_FORM_INPUTS_DATA'
+      }),
     }
   };
 </script>

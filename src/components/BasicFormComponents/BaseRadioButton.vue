@@ -12,7 +12,7 @@
              :placeholder="fieldData.placeholder"
              :name="fieldData.inputName"
              :class="fieldData.className"
-             :value="fieldData.value"
+             :value="fieldData.radioValue"
              @input="inputEvents_inputEmit($event.target.value)"
       >
 

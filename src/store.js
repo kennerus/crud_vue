@@ -10,7 +10,7 @@ export default new Vuex.Store({
   mutations: {},
   actions: {
     GET_FORM_INPUTS_DATA() {
-      return fetch('https://vueforms.art-craft.xyz/forms/first')
+      return axios.get('/forms/first')
         .then(response => response)
         .catch(error => console.error(error));
     }

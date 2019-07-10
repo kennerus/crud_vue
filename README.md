@@ -1,7 +1,7 @@
 # crud
 
 
-[Докуметнация](doc/main.md)
+[Докуметнация](/doc/MAIN.md)
 
 ## Project setup
 ```
